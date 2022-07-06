@@ -13,7 +13,6 @@ import java.util.List;
 @Table(name="groups")
 @Getter@Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Group{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -23,35 +22,17 @@ public class Group{
     private String dateOfStart;
     private String dateOfFinish;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    private List<Course> courses;
-
+    @ManyToMany(cascade= {CascadeType.MERGE, CascadeType.PERSIST},fetch = FetchType.LAZY)
     @JsonIgnore
-    @OneToMany(mappedBy = "group",cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Student>students;
+    private List<Course> courses= new ArrayList<>();
 
-    @ManyToOne
-    private Company company;
+    @OneToMany(mappedBy = "group",cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<Student>students= new ArrayList<>();
+
 
     @CreatedDate
     private LocalDate created;
 
-    public void addStudent(Student student) {
-        this.students.add(student);
-    }
-
-//    public Group(String groupName, Date dateOfStart, Date dateOfFinish) {
-//        this.groupName = groupName;
-//        this.dateOfStart = dateOfStart;
-//        this.dateOfFinish = dateOfFinish;
-//    }
-
-//    public void setCourse(Course course) {
-//        this.courses.add(course);
-//    }
-//    public void setStudents(Student student){
-//        this.students.add(student);
-//    }
 }
 
 

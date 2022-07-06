@@ -3,6 +3,7 @@ package peaksoft.spring_res_api.api;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import peaksoft.spring_res_api.dto.request.TeacherRequest;
 import peaksoft.spring_res_api.dto.response.TeacherResponse;
@@ -13,7 +14,8 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/teachers")
+@RequestMapping("/api/teachers")
+@PreAuthorize("hasAuthority('SUPER_ADMIN')")
 @Tag(name = "Teacher API", description = "User with role admin can add, update, delete or get all teachers")
 public class TeacherApi{
 

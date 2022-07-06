@@ -14,12 +14,13 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/companies")
+@RequestMapping("/api/companies")
 @PreAuthorize("hasAuthority('SUPER_ADMIN')")
 @Tag(name = "Company API", description = "User with role admin can add, update, delete or get all companies")
 public class CompanyApi {
 
     private final CompanyService service;
+
 
     @PostMapping
     @Operation(summary = "create company", description = "we can create company")
@@ -28,7 +29,7 @@ public class CompanyApi {
     }
     @PutMapping("{id}")
     @Operation(summary = "update company", description = "we can update company")
-    public CompanyResponse update(@PathVariable long id, @RequestBody(required = false) CompanyRequest request) {
+    public CompanyResponse update(@PathVariable long id, @RequestBody CompanyRequest request) {
         return service.update(id, request);
     }
 

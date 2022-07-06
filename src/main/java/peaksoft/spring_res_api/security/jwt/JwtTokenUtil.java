@@ -8,15 +8,16 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
 @Service
-public class JwtTokenUtil {
+public class JwtTokenUtil implements Serializable {
 
-        @Value("Java_5")
+        @Value("java_5")
         private String jwtSecret;
         private final static Long JWT_TOKEN_VALIDITY = 7 * 24 * 60 * 60 * 1000L; //1 week
 

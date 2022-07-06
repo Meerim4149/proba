@@ -3,6 +3,7 @@ package peaksoft.spring_res_api.api;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import peaksoft.spring_res_api.dto.request.GroupRequest;
 import peaksoft.spring_res_api.dto.response.GroupResponse;
@@ -13,10 +14,10 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/groups")
+@PreAuthorize("hasAnyAuthority('SUPER_ADMIN','ADMIN')")
+@RequestMapping("/api/groups")
 @Tag(name = "Group API", description = "User with role admin can add, update, delete or get all groups")
 public class GroupApi {
-
         private final GroupService service;
 
         @PostMapping

@@ -1,4 +1,4 @@
-package peaksoft.spring_res_api.dto;
+package peaksoft.spring_res_api.exceptions;
 
 public class ValidationExceptionType {
     public static final String SUCCESSFUL = "Successful";

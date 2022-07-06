@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import peaksoft.spring_res_api.dto.LoginMapper;
-import peaksoft.spring_res_api.dto.ValidationExceptionType;
+import peaksoft.spring_res_api.exceptions.ValidationExceptionType;
 import peaksoft.spring_res_api.dto.request.RegisterRequest;
 import peaksoft.spring_res_api.dto.response.LoginResponse;
 import peaksoft.spring_res_api.dto.response.RegisterResponse;
@@ -35,7 +35,8 @@ public class AuthApi {
             try {
                 UsernamePasswordAuthenticationToken token =
                         new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword());
-                User user = repository.findByEmail(token.getName()).get();
+                User user = repository.findByEmail(token.getName()).orElse(null);
+                assert user != null;
                 return ResponseEntity.ok()
                         .body(loginMapper.loginView(jwtTokenUtil.generateToken(user), ValidationExceptionType.SUCCESSFUL, user));
             } catch (BadCredentialsException ex) {

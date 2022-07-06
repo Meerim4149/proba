@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import peaksoft.spring_res_api.dto.request.TeacherRequest;
 import peaksoft.spring_res_api.dto.response.TeacherResponse;
+import peaksoft.spring_res_api.exceptions.TeacherNotFoundException;
 import peaksoft.spring_res_api.mapper.edit.TeacherMapperEdit;
 import peaksoft.spring_res_api.mapper.view.TeacherMapperView;
 import peaksoft.spring_res_api.model.Teacher;
@@ -27,18 +28,23 @@ public class TeacherService {
         repository.save(teacher);
         return viewMapper.viewTeacher(teacher);
     }
+    private Teacher getTeacherById(Long id){
+        return repository.findById(id).orElseThrow(
+                () -> new TeacherNotFoundException(
+                        "Not Found with id " +id));
+    }
     public TeacherResponse update(Long id, TeacherRequest teacherRequest) {
-        Teacher teacher = repository.findById(id).get();
+        Teacher teacher = getTeacherById(id);
         editMapper.update(teacher, teacherRequest);
         return viewMapper.viewTeacher(repository.save(teacher));
     }
 
     public TeacherResponse findById(Long id) {
-        Teacher teacher = repository.findById(id).get();
+        Teacher teacher = getTeacherById(id);
         return viewMapper.viewTeacher(teacher);
     }
     public TeacherResponse deleteById(Long id) {
-        Teacher teacher = repository.getById(id);
+        Teacher teacher = getTeacherById(id);
         repository.delete(teacher);
         return viewMapper.viewTeacher(teacher);
     }
@@ -47,12 +53,5 @@ public class TeacherService {
         return viewMapper.view(repository.findAll());
     }
 
-//    public List<TeacherResponse> view(List<Teacher> teachers) {
-//        List<TeacherResponse> responses = new ArrayList<>();
-//        for (Teacher teacher:  teachers ) {
-//            responses.add(viewMapper.viewTeacher(teacher));
-//
-//        }
-//        return responses;
-//    }
+
 }

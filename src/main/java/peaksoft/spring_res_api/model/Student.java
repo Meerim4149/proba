@@ -8,6 +8,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name="students")
+@ToString
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,22 +22,22 @@ public class Student {
     private StudyFormat studyFormat;
     private String lastName;
 
-    @CreatedDate
-    private LocalDate created;
-
     @ManyToOne(cascade = CascadeType.MERGE)
     private Group group;
 
     @Transient
     private Long groupId;
 
-    public Group getGroup(){
-        return group;
-    }
+    @CreatedDate
+    private LocalDate created;
 
-    public void  setGroup(Group group){
-        this.group =group;
-    }
+//    public Group getGroup(){
+//        return group;
+//    }
+//
+//    public void  setGroup(Group group){
+//        this.group =group;
+//    }
 
 
 

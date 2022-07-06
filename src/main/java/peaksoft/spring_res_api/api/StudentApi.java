@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import peaksoft.spring_res_api.dto.request.StudentRequest;
 import peaksoft.spring_res_api.dto.response.StudentResponse;
@@ -15,7 +16,8 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/students")
+@RequestMapping("/api/students")
+@PreAuthorize("hasAuthority('SUPER_ADMIN')")
 @Tag(name = "Student API", description = "User with role admin can add, update, delete or get all students")
 public class StudentApi  {
 
@@ -23,7 +25,7 @@ public class StudentApi  {
         @PostMapping
         @Operation(summary = "create student", description = "we can create student")
         public StudentResponse create(@RequestBody StudentRequest request) {
-                return service.create(request.getGroupId(), request);
+                return service.create(request);
         }
 
         @PostMapping("{id}")
@@ -37,6 +39,7 @@ public class StudentApi  {
         public StudentResponse findById(@PathVariable long id) {
                 return service.findById(id);
         }
+
         @DeleteMapping("{id}")
         @Operation(summary = "delete student", description = "we can delete student by id")
         public StudentResponse delete(@PathVariable long id) {

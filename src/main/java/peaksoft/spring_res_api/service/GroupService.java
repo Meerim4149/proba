@@ -2,8 +2,10 @@ package peaksoft.spring_res_api.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 import peaksoft.spring_res_api.dto.request.GroupRequest;
 import peaksoft.spring_res_api.dto.response.GroupResponse;
+import peaksoft.spring_res_api.exceptions.GroupNotFoundException;
 import peaksoft.spring_res_api.mapper.edit.GroupMapperEdit;
 import peaksoft.spring_res_api.mapper.view.GroupMapperView;
 import peaksoft.spring_res_api.model.Group;;
@@ -24,19 +26,24 @@ public class GroupService {
         repository.save(group);
         return viewMapper.viewGroup(group);
     }
+    private Group getGroupById(Long id){
+        return repository.findById(id).orElseThrow(
+                () -> new GroupNotFoundException(
+                        "Not Found with id " +id));
+    }
 
     public GroupResponse update(Long id, GroupRequest groupRequest) {
-        Group group = repository.findById(id).get();
+        Group group = getGroupById(id);
         editMapper.update(group, groupRequest);
         return viewMapper.viewGroup(repository.save(group));
     }
 
     public GroupResponse findById(Long id) {
-        Group group = repository.findById(id).get();
+        Group group = getGroupById(id);
         return viewMapper.viewGroup(group);
     }
     public GroupResponse deleteById(Long id) {
-        Group group = repository.getById(id);
+        Group group = getGroupById(id);
         repository.delete(group);
         return viewMapper.viewGroup(group);
     }
@@ -45,12 +52,4 @@ public class GroupService {
         return viewMapper.view(repository.findAll());
     }
 
-//    public List<GroupResponse> view(List<Group> groups) {
-//        List<GroupResponse> responses = new ArrayList<>();
-//        for (Group group:  groups ) {
-//            responses.add(viewMapper.viewGroup(group));
-//
-//        }
-//        return responses;
-//    }
 }

@@ -8,6 +8,7 @@ import java.util.UUID;
 @Getter
 @Setter
 public class CourseRequest {
+
     private String courseName;
     private long duration;
     private Long companyId;

@@ -12,6 +12,7 @@ public class TestApi {
 
         @GetMapping("/hello")
         public String helloAdmin(){
-            return "I am Admin";
+            return "Hello I am Test, I am Admin";
         }
+
 }

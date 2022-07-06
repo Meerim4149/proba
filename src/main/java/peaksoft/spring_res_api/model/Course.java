@@ -5,6 +5,7 @@ import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,26 +15,26 @@ import java.util.List;
 @NoArgsConstructor
 public class Course {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "course_id_generator",
+            sequenceName = "course_seq", allocationSize = 1)
     private Long id;
     private String courseName;
     private long duration;
-    @OneToOne(cascade = {CascadeType.MERGE,CascadeType.REMOVE}, orphanRemoval = true)
+
+    @OneToOne(mappedBy = "course",orphanRemoval = true)
     private Teacher teacher;
 
-    @ManyToMany(mappedBy = "courses",cascade={CascadeType.MERGE,CascadeType.REMOVE},
-            fetch = FetchType.EAGER)
-    private List<Group> groups;
+    @ManyToMany(mappedBy = "courses",cascade={ CascadeType.MERGE, CascadeType.PERSIST} ,fetch=FetchType.LAZY)
+    private List<Group> groups = new ArrayList<>();
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH,CascadeType.DETACH})
     private Company company;
 
     public void setGroup(Group group){
         this.groups.add(group);
     }
-    public void addGroup(Group group){
-        this.groups.add(group);
-    }
+
     public List<Group>getGroups(){
         return groups;
     }
@@ -43,4 +44,8 @@ public class Course {
 
     @Transient
     private  Long companyId;
+
+//    public void addGroup(Group group) {
+//        this.groups.add(group);
+//    }
 }

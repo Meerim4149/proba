@@ -1,6 +1,7 @@
 package peaksoft.spring_res_api.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
@@ -11,7 +12,6 @@ import java.time.LocalDate;
 @Table(name="teachers")
 @Data
 @Getter@Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class Teacher {
 
@@ -22,22 +22,13 @@ public class Teacher {
         private String firstName;
         private String email;
         private String lastName;
-
-//        (mappedBy = "course", cascade = CascadeType.ALL,
-//                fetch = FetchType.LAZY, optional = false)
-        @OneToOne
+        @OneToOne(cascade={CascadeType.REFRESH,CascadeType.MERGE,CascadeType.DETACH})
+        @JsonIgnore
         private Course course;
-
-        public Course getCourse(){
-                return course;
-        }
-
-        public void setCourse(Course course){
-                this.course=course;
-        }
 
         @Transient
         private Long courseId;
+
 
         @CreatedDate
         private LocalDate created;

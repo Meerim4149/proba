@@ -9,13 +9,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96c3fe8-bba8-4945-accc-a8c4c0b44d8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="f96c3fe8-bba8-4945-accc-a8c4c0b44d8c" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/api/AuthApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/api/AuthApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/api/CompanyApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/api/CompanyApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/api/CourseApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/api/CourseApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/api/GroupApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/api/GroupApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/api/StudentApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/api/StudentApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/api/TeacherApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/api/TeacherApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/api/TestApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/api/TestApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/dto/ValidationExceptionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/exceptions/ValidationExceptionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/dto/request/CourseRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/dto/request/CourseRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/dto/response/Response.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/exceptions/CompanyNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/exceptions/CompanyNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/exceptions/GroupNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/exceptions/GroupNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/model/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/model/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/model/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/model/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/model/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/model/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/model/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/model/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/repository/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/repository/CourseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/repository/GroupRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/repository/GroupRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/repository/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/repository/StudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/repository/TeacherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/repository/TeacherRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/security/GlobalSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/security/GlobalSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/security/jwt/JwtTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/security/jwt/JwtTokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/security/jwt/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/security/jwt/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/service/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/service/CompanyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/service/CourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/service/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/service/GroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/service/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/service/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/peaksoft/spring_res_api/service/TeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +101,8 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "spring.configuration.checksum": "180dcdfda569a2ba2c22137614d9dc7e"
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "spring.configuration.checksum": "8c40400c009918b5f10b73f9a0e47398"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -94,19 +123,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.RestApiApplication">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="practice" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="practice" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RestApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="practice" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="peaksoft.RestApiApplication" />
@@ -226,8 +242,24 @@
       <workItem from="1655807966636" duration="3000" />
       <workItem from="1655825919105" duration="44316000" />
       <workItem from="1656210483571" duration="15945000" />
-      <workItem from="1656227799504" duration="28265000" />
+      <workItem from="1656227799504" duration="88404000" />
+      <workItem from="1656658862118" duration="20941000" />
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <created>1656469238915</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656469238915</updated>
+    </task>
+    <task id="LOCAL-00002" summary="commit">
+      <created>1656470101574</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656470101574</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,5 +275,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>
